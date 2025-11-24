@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ movie }) => {
+const Card = ({ movie, genre }) => {
   new Date().toLocaleDateString("fr-FR");
   return (
     <div>
@@ -12,12 +12,9 @@ const Card = ({ movie }) => {
         <h3>{movie.original_title}</h3>
         <p>{new Date(movie.release_date).toLocaleDateString("fr-FR")}</p>
         <p>{Math.round(movie.vote_average * 10) / 10}/10</p>
-        <p>
-          {movie.genre_names
-            ? movie.genre_names.join(", ")
-            : "Genres non disponibles"}
-        </p>
+        <p>{genre ? genre.join(", ") : "genres non disponibles"}</p>
         <p>{movie.overview}</p>
+        <button>Coups de coeur</button>
       </div>
     </div>
   );

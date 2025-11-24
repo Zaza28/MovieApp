@@ -24,25 +24,20 @@ const Data = () => {
         console.log(res);
       });
   }, []);
+  const getMoviesgenres = (setGenres) => {
+    let genreNames = [];
 
-  const getMoviesWithGenres = () => {
-    if (!data || !genres) return [];
+    for (let i = 0; i < setGenres.length; i++) {
+      const genreId = setGenres[i];
 
-    return data.map((movie) => {
-      // Trouver les noms des genres pour ce film
-      const genreNames = movie.genre_ids
-        .map((genreId) => {
-          const genre = genres.find((g) => g.id === genreId);
-          return genre ? genre.name : "";
-        })
-        .filter((name) => name !== "");
-
-      // Retourner le film avec les noms de genres ajoutés
-      return {
-        ...movie,
-        genre_names: genreNames,
-      };
-    });
+      for (let j = 0; j < genres.length; j++) {
+        if (genres[j].id === genreId) {
+          genreNames.push(genres[j].name);
+          break;
+        }
+      }
+    }
+    return genreNames;
   };
 
   return (
@@ -50,13 +45,13 @@ const Data = () => {
       <div className="movies-container">
         {data &&
           genres &&
-          getMoviesWithGenres().map((movie) => (
-            <Card key={movie.id} movie={movie} />
+          data.map((movie) => (
+            <Card
+              key={movie.id}
+              movie={movie}
+              genre={getMoviesgenres(movie.genre_ids)}
+            />
           ))}
-      </div>
-      <div>
-        {genres &&
-          genres.map((genre) => <span key={genre.id}>{genre.name}</span>)}
       </div>
     </div>
   );
