@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Card from "../components/Card";
-const Data = () => {
+import Card from "./Card";
+import Home from "../pages/Home";
+const Data = ({ favorites, setFavorites }) => {
   const [data, setData] = useState("");
   const [genres, setGenres] = useState("");
+
   useEffect(() => {
     axios
       .get(
@@ -39,17 +41,38 @@ const Data = () => {
     }
     return genreNames;
   };
+  const favoriteMovies = (movie) => {
+    console.log("Avant:", favorites);
+    console.log("Film cliqué:", movie);
+    let isFavorite = false;
+    for (let i = 0; i < favorites.length; i++) {
+      if (favorites[i].id === movie.id) {
+        isFavorite = true;
+        break;
+      }
+    }
+    if (isFavorite) {
+      setFavorites(favorites.filter((fav) => fav.id !== movie.id));
+    } else {
+      setFavorites([...favorites, movie]);
+    }
+  };
+  // useEffect(() => {
+  //   localStorage.setItem("favoritesMovies", JSON.stringify(favorites));
+  // }, [favorites]);
 
   return (
     <div>
+      <Home />
       <div className="movies-container">
-        {data &&
-          genres &&
+        {data.length > 0 &&
+          genres.length > 0 &&
           data.map((movie) => (
             <Card
               key={movie.id}
               movie={movie}
               genre={getMoviesgenres(movie.genre_ids)}
+              favori={favoriteMovies}
             />
           ))}
       </div>
