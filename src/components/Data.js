@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "../css/Card.css";
 import Card from "./Card";
 
 const Data = ({ favorites, setFavorites, searchTerm, sortOrder }) => {
