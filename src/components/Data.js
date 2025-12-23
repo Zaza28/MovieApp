@@ -49,8 +49,6 @@ const Data = ({ favorites, setFavorites, searchTerm, sortOrder }) => {
 
   // logique pour mettre les films en favoris :
   const favoriteMovies = (movie) => {
-    console.log("Avant:", favorites);
-    console.log("Film cliqué:", movie);
     let isFavorite = false;
     for (let i = 0; i < favorites.length; i++) {
       if (favorites[i].id === movie.id) {
@@ -59,9 +57,11 @@ const Data = ({ favorites, setFavorites, searchTerm, sortOrder }) => {
       }
     }
     if (isFavorite) {
-      setFavorites(favorites.filter((fav) => fav.id !== movie.id));
+      // setFavorites(favorites.filter((fav) => fav.id !== movie.id));
+      alert("Ce film est déjà dans vos coups de coeurs !");
     } else {
       setFavorites([...favorites, movie]);
+      alert("Film ajouté à vos coups de coeurs !");
     }
   };
   //fonction pour filtrer et trier les films :
@@ -84,7 +84,7 @@ const Data = ({ favorites, setFavorites, searchTerm, sortOrder }) => {
   }, [favorites]);
 
   return (
-    <div>
+    <div className="">
       <div className="movies-container">
         {moviesToDisplay.length > 0 && genres.length > 0 ? (
           moviesToDisplay.map((movie) => (
@@ -93,6 +93,8 @@ const Data = ({ favorites, setFavorites, searchTerm, sortOrder }) => {
               movie={movie}
               genre={getMoviesgenres(movie.genre_ids)}
               favori={favoriteMovies}
+              isOnFavoritePage={false}
+              isFavorite={favorites.some((fav) => fav.id === movie.id)}
             />
           ))
         ) : (

@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import Data from "../components/Data";
+import "../css/Home.css";
 
 const Home = ({ favorites, setFavorites }) => {
   const [searchMovie, setSearchMovie] = useState("");
   const [activeSearch, setActiveSearch] = useState("");
   const [sortOrder, setSortOrder] = useState("");
+
   //handle input
   const handleSearch = (e) => {
     setSearchMovie(e.target.value);
@@ -24,9 +26,9 @@ const Home = ({ favorites, setFavorites }) => {
     setSortOrder("flop");
   };
   return (
-    <div>
+    <div className="header-container">
       <header>
-        <h2>React Movies</h2>
+        <h2 id="main-title">Moviepedia</h2>
         <input
           type="search"
           value={searchMovie}

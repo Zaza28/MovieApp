@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../components/Card";
+import "../css/Favoris.css";
 
 const Favoris = ({ favorites, setFavorites }) => {
   const getMoviesgenres = (genreIds) => {
@@ -8,10 +9,11 @@ const Favoris = ({ favorites, setFavorites }) => {
 
   const favoriteMovies = (movie) => {
     setFavorites(favorites.filter((fav) => fav.id !== movie.id));
+    alert("Film supprimé de vos coups de coeurs !");
   };
 
   return (
-    <div>
+    <div className="favoris-container">
       <h2>Coups de Cœur</h2>
       {favorites.length === 0 ? (
         <p>Aucun film dans vos coups de coeurs</p>
@@ -24,6 +26,7 @@ const Favoris = ({ favorites, setFavorites }) => {
               genre={getMoviesgenres(movie.genre_ids)}
               favori={favoriteMovies}
               isOnFavoritePage={true}
+              isFavorite={true}
             />
           ))}
         </div>
