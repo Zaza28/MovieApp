@@ -1,6 +1,32 @@
-.App {
-  text-align: center;
+body {
   background: #bdc3c7;
   background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
   background: linear-gradient(to right, #2c3e50, #bdc3c7);
+}
+.App {
+  text-align: center;
+
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+}
+#nav-bg {
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+  font-family: "Orbitron", sans-serif;
+}
+.nav-title {
+  color: rgb(199, 208, 208);
+  text-shadow: 2px 2px 4px #a89213;
+  font-size: 32px;
+}
+
+.me-auto .nav-link {
+  font-size: 16px;
+  color: #becff1;
+  font-weight: bold;
+}
+.me-auto .nav-link:hover {
+  color: #aeab54;
 }

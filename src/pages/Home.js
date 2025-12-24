@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Data from "../components/Data";
 import "../css/Home.css";
+import backgroundImg from "../img/backgroung-img.jpeg";
 
 const Home = ({ favorites, setFavorites }) => {
   const [searchMovie, setSearchMovie] = useState("");
@@ -27,7 +28,8 @@ const Home = ({ favorites, setFavorites }) => {
   };
   return (
     <div className="header-container">
-      <header>
+      <img className="img-header" src={backgroundImg} alt="background-img" />
+      <header className="header">
         <h2 id="main-title">Moviepedia</h2>
         <input
           type="search"

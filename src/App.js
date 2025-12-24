@@ -13,19 +13,19 @@ function App() {
   });
   return (
     <div className="App">
-      <Navbar bg="" variant="light" expand="lg" fixed="top">
+      <Navbar id="nav-bg" variant="light" expand="lg" fixed="top">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            Moviepedia
+            <h3 className="nav-title">Moviepedia</h3>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/">
-                Accueil
+              <Nav.Link className="nav-link" as={Link} to="/">
+                accueil
               </Nav.Link>
-              <Nav.Link as={Link} to="/Favoris">
-                Coups de Cœur
+              <Nav.Link className="nav-link" as={Link} to="/Favoris">
+                coups de cœurs
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
