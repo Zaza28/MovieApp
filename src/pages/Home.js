@@ -48,7 +48,7 @@ const Home = ({ favorites, setFavorites }) => {
         </button>
       </header>
       <section>
-        <Data
+        <Data                              
           favorites={favorites}
           setFavorites={setFavorites}
           searchTerm={activeSearch}
