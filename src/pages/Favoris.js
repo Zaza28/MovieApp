@@ -14,7 +14,7 @@ const Favoris = ({ favorites, setFavorites }) => {
 
   return (
     <div className="favoris-container">
-      <h2>Coups de Cœur</h2>
+      <h2 id="fav-title">Coups de Cœur</h2>
       {favorites.length === 0 ? (
         <p>Aucun film dans vos coups de coeurs</p>
       ) : (

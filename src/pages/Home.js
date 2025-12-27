@@ -27,18 +27,25 @@ const Home = ({ favorites, setFavorites }) => {
     setSortOrder("flop");
   };
   return (
-    <div className="header-container">
-      <img className="img-header" src={backgroundImg} alt="background-img" />
+    <div>
       <header className="header">
+        <img className="img-header" src={backgroundImg} alt="background-img" />
         <h2 id="main-title">Moviepedia</h2>
         <input
           type="search"
           value={searchMovie}
           onChange={handleSearch}
+          placeholder="chercher un film..."
         ></input>
-        <button onClick={handleSearchClick}>Rechercher</button>
-        <button onClick={handleRateTop}>Top</button>
-        <button onClick={handleRateFlop}>Flop</button>
+        <button id="btn-search" onClick={handleSearchClick}>
+          Rechercher
+        </button>
+        <button id="btn-filter" onClick={handleRateTop}>
+          Top
+        </button>
+        <button id="btn-filter" onClick={handleRateFlop}>
+          Flop
+        </button>
       </header>
       <section>
         <Data

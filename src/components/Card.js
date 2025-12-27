@@ -15,24 +15,36 @@ const Card = ({ movie, genre, favori, isOnFavoritePage, isFavorite }) => {
         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
         alt="affiche du film"
       />
-      <div className="movie-card-content">
+      <div id="movie-card-content">
         <h3 id="movie-title">{movie.title}</h3>
-        <p>
+        <p id="p-date">
           Sorti le : {new Date(movie.release_date).toLocaleDateString("fr-FR")}
         </p>
-        <p>
+        <p id="p-note">
           {Math.round(movie.vote_average * 10) / 10}/10
           <FontAwesomeIcon icon={faStar} style={{ color: "gold" }} />
         </p>
-        <p>{genre ? genre.join(" ") : "genres non disponibles"}</p>
-        <p className="synopsis">Synopsis</p>
-        <p>{movie.overview ? movie.overview : "Synopsis non disponible"}</p>
+        <p className="genres-container">
+          {genre && genre.length > 0 ? (
+            genre.map((g, index) => (
+              <span key={index} className="p-genres">
+                {g}
+              </span>
+            ))
+          ) : (
+            <p>Genres non disponibles</p>
+          )}
+        </p>
+        <h4 className="synopsis">Synopsis</h4>
+        <p id="p-synopsis">
+          {movie.overview ? movie.overview : "Synopsis non disponible"}
+        </p>
       </div>
       <button className="btn-fav" onClick={() => favori(movie)}>
         {isOnFavoritePage ? (
           <FontAwesomeIcon
             icon={faHeartCircleXmark}
-            style={{ color: "#b8e7f1ff" }}
+            style={{ color: "#b9b37fff" }}
           />
         ) : isFavorite ? (
           <FontAwesomeIcon
@@ -42,7 +54,7 @@ const Card = ({ movie, genre, favori, isOnFavoritePage, isFavorite }) => {
         ) : (
           <FontAwesomeIcon
             icon={faHeartCirclePlus}
-            style={{ color: "#b8e7f1ff" }}
+            style={{ color: "#768ca4ff" }}
           />
         )}
       </button>

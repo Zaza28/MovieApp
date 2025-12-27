@@ -1,7 +1,12 @@
+.header {
+  margin-bottom: 170px;
+}
+
 .img-header {
   object-fit: cover;
-  height: 450px;
+  height: 550px;
   width: 100%;
+  border: 3px solid rgb(185, 185, 185);
 }
 
 #main-title {
@@ -9,4 +14,15 @@
   color: #2c3e50;
   font-size: 100px;
   text-shadow: 2px 2px 4px rgb(247, 242, 228);
+  margin-top: -320px;
+}
+
+input[type="search"] {
+  font-family: "inter";
+}
+#btn-search {
+  font-family: "inter";
+}
+#btn-filter {
+  font-family: "inter";
 }

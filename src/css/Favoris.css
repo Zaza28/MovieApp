@@ -4,3 +4,10 @@
   background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
   background: linear-gradient(to right, #2c3e50, #bdc3c7);
 }
+#fav-title {
+  font-family: "Orbitron", sans-serif;
+  color: #b9b37fff;
+  font-size: 100px;
+  text-shadow: 2px 2px 4px #d8d9da;
+  margin-top: 70px;
+}
