@@ -47,8 +47,8 @@ const Home = ({ favorites, setFavorites }) => {
           Flop
         </button>
       </header>
-      <section>
-        <Data                              
+      <section className="caca">
+        <Data
           favorites={favorites}
           setFavorites={setFavorites}
           searchTerm={activeSearch}
