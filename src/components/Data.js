@@ -25,6 +25,7 @@ const Data = ({ favorites, setFavorites, searchTerm, sortOrder }) => {
       )
       .then((res) => {
         setGenres(res.data.genres);
+        localStorage.setItem("movieGenres", JSON.stringify(res.data.genres));
         console.log(res);
       });
   }, []);
