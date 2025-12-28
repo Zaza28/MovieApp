@@ -17,13 +17,16 @@ const Card = ({ movie, genre, favori, isOnFavoritePage, isFavorite }) => {
       />
       <div id="movie-card-content">
         <h3 id="movie-title">{movie.title}</h3>
-        <p id="p-date">
-          Sorti le : {new Date(movie.release_date).toLocaleDateString("fr-FR")}
-        </p>
-        <p id="p-note">
-          {Math.round(movie.vote_average * 10) / 10}/10
-          <FontAwesomeIcon icon={faStar} style={{ color: "gold" }} />
-        </p>
+        <span className="info-rate-container">
+          <p id="p-date">
+            <h4 id="date">Sorti le :</h4>{" "}
+            {new Date(movie.release_date).toLocaleDateString("fr-FR")}
+          </p>
+          <p id="p-note">
+            {Math.round(movie.vote_average * 10) / 10}/10
+            <FontAwesomeIcon icon={faStar} style={{ color: "gold" }} />
+          </p>
+        </span>
         <p className="genres-container">
           {genre && genre.length > 0 ? (
             genre.map((g, index) => (
