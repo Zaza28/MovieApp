@@ -57,7 +57,8 @@ img {
   justify-content: start;
   gap: 100px;
   margin-top: 15px;
-  padding: 0;
+  margin-bottom: 0;
+  padding-bottom: 0px;
 }
 #p-date {
   display: flex;
@@ -105,7 +106,9 @@ p {
   flex-wrap: wrap;
   gap: 4px;
   justify-content: start;
-  margin: 10px 0;
+  margin: 10px 0px;
+  padding-bottom: 5px;
+  padding-top: 0px;
 }
 .p-genres {
   border-radius: 15px;
