@@ -17,16 +17,15 @@
   background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
   background: linear-gradient(to right, #2c3e50, #bdc3c7);
   width: 20%;
-  height: 750px;
+  height: 700px;
   text-align: center;
-  margin: 50px;
+  margin: 40px;
   padding: 20px;
   border: solid #949b9d;
 }
 
 #movie-title {
   margin: 0;
-  padding-bottom: 7px;
   color: rgb(227, 228, 228);
   text-shadow: 2px 2px 4px rgb(48, 48, 48);
   font-family: "Orbitron", sans-serif;
@@ -36,18 +35,27 @@
   font-size: 19px;
 }
 img {
-  display: flex;
+  /* display: block; */
+  margin: 0 auto;
   object-fit: cover;
-  width: 270px;
-  height: 360px;
+  width: 90%;
+  height: 340px;
   border: solid #858c8e;
+}
+.content-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
 }
 #movie-card-content {
   font-family: "inter";
   border-radius: 15px;
   width: 90%;
   margin: 0 auto;
-  height: 300px;
+  height: 255px;
   padding-top: 0;
   text-align: center;
   font-size: 14px;
@@ -78,7 +86,7 @@ img {
 #p-note {
   color: rgb(241, 243, 243);
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
 }
 .synopsis {
   color: rgb(13, 16, 55);
@@ -131,4 +139,205 @@ p {
   left: 10px;
   border: none;
   background: none;
+}
+/* ========================================
+   TABLETTE (768px - 1024px)
+   ======================================== */
+@media screen and (max-width: 1024px) {
+  .movies-container {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  #card-container {
+    width: 40%; /* 2 cartes par ligne */
+    min-width: 300px;
+    margin: 20px;
+    height: 700px;
+  }
+
+  img {
+    width: 240px;
+    height: 320px;
+  }
+
+  #movie-card-content {
+    font-size: 13px;
+  }
+
+  #movie-title {
+    font-size: 17px;
+  }
+  .info-rate-container {
+    gap: 10px; /* Réduit l'espace */
+    flex-wrap: wrap;
+  }
+}
+
+/* ========================================
+   PETITE TABLETTE (600px - 768px)
+   ======================================== */
+@media screen and (max-width: 768px) {
+  .movies-container {
+    flex-direction: column; /* Une seule colonne */
+    align-items: center;
+    gap: 30px;
+    padding: 15px;
+  }
+
+  #card-container {
+    width: 80%; /* Carte plus large */
+    max-width: 400px;
+    margin: 15px auto;
+    height: auto; /* Hauteur automatique */
+    min-height: 650px;
+    padding: 15px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 2/3; /* Garde les proportions */
+  }
+
+  #movie-card-content {
+    width: 95%;
+    height: auto;
+    font-size: 14px;
+  }
+
+  #movie-title {
+    font-size: 18px;
+  }
+
+  .info-rate-container {
+    gap: 50px; /* Réduit l'espace */
+    flex-wrap: wrap;
+  }
+
+  .genres-container {
+    justify-content: center; /* Centre les genres */
+  }
+
+  .btn-fav {
+    font-size: 24px;
+    top: 95%;
+  }
+}
+
+/* ========================================
+   MOBILE (320px - 600px)
+   ======================================== */
+@media screen and (max-width: 600px) {
+  .movies-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  #card-container {
+    width: 90%; /* Presque pleine largeur */
+    max-width: 350px;
+    margin: 10px auto;
+    height: auto;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    aspect-ratio: 2/3;
+  }
+
+  #movie-title {
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+
+  #movie-card-content {
+    width: 100%;
+    font-size: 13px;
+    height: 270px;
+    gap: 0;
+    margin-bottom: 15px;
+  }
+
+  .info-rate-container {
+    flex-direction: wrap; /* Empile date et note */
+    gap: 15px;
+    justify-content: space-between;
+  }
+
+  #p-date {
+    font-size: 13px;
+  }
+
+  #date {
+    font-size: 14px;
+  }
+
+  #p-note {
+    font-size: 13px;
+  }
+
+  .genres-container {
+    justify-content: start;
+    gap: 5px;
+  }
+
+  .p-genres {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .synopsis {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  #p-synopsis {
+    font-size: 13px;
+    -webkit-line-clamp: 5; /* Plus de lignes sur mobile */
+  }
+
+  .btn-fav {
+    font-size: 22px;
+    top: 93%;
+    left: 5px;
+  }
+}
+
+/* ========================================
+   TRÈS PETIT MOBILE (< 375px)
+   ======================================== */
+@media screen and (max-width: 375px) {
+  #card-container {
+    width: 95%;
+    margin: 10px auto;
+    padding: 12px;
+  }
+
+  img {
+    max-width: 220px;
+  }
+
+  #movie-title {
+    font-size: 15px;
+  }
+
+  #movie-card-content {
+    font-size: 12px;
+  }
+
+  .info-rate-container {
+    gap: 8px;
+  }
+
+  .p-genres {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
 }

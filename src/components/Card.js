@@ -11,12 +11,15 @@ const Card = ({ movie, genre, favori, isOnFavoritePage, isFavorite }) => {
 
   return (
     <div id="card-container">
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-        alt="affiche du film"
-      />
-      <div id="movie-card-content">
+      <div className="content-header">
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          alt="affiche du film"
+        />{" "}
         <h3 id="movie-title">{movie.title}</h3>
+      </div>
+
+      <div id="movie-card-content">
         <span className="info-rate-container">
           <p id="p-date">
             <h4 id="date">Sorti le :</h4>{" "}
